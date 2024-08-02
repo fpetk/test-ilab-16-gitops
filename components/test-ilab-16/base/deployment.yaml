@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:  
+    tad.gitops.set/image: ".spec.template.spec.containers[0].image"
+    tad.gitops.get/image: ".spec.template.spec.containers[0].image"
+    tad.gitops.set/replicas: ".spec.replicas"
+    tad.gitops.get/replicas: ".spec.replicas" 
+  labels: 
+    app.kubernetes.io/instance: test-ilab-16
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name:  test-ilab-16
+    app.kubernetes.io/part-of: test-ilab-16  
+  name: test-ilab-16
